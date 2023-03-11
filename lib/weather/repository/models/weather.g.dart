@@ -15,16 +15,17 @@ Weather _$WeatherFromJson(Map<String, dynamic> json) => $checkedCreate(
           temperature:
               $checkedConvert('temperature', (v) => (v as num).toDouble()),
           condition: $checkedConvert(
-              'condition', (v) => $enumDecode(_$WeatherConditionEnumMap, v)),
+              'weathercode', (v) => $enumDecode(_$WeatherConditionEnumMap, v)),
         );
         return val;
       },
+      fieldKeyMap: const {'condition': 'weathercode'},
     );
 
 Map<String, dynamic> _$WeatherToJson(Weather instance) => <String, dynamic>{
       'location': instance.location,
       'temperature': instance.temperature,
-      'condition': _$WeatherConditionEnumMap[instance.condition]!,
+      'weathercode': _$WeatherConditionEnumMap[instance.condition]!,
     };
 
 const _$WeatherConditionEnumMap = {

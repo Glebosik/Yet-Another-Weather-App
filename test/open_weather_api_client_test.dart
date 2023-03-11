@@ -2,8 +2,7 @@
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
-import 'package:weather_bloc/api/open_weather_api/open_weather_api.dart';
-import 'package:weather_bloc/api/weather_api/weather_api_client.dart';
+import 'package:weather_bloc/api/weather_api/weather_api.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
 

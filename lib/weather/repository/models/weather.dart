@@ -31,6 +31,7 @@ class Weather extends Equatable {
 
   final String location;
   final double temperature;
+  @JsonKey(name: 'weathercode')
   final WeatherCondition condition;
 
   @override

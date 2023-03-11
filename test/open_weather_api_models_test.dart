@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:weather_bloc/api/open_meteo_api/open_meteo_api.dart';
+import 'package:weather_bloc/api/weather_api/weather_api.dart';
 
 void main() {
   group('Weather', () {

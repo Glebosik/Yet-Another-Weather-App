@@ -2,8 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:weather_bloc/api/weather_api/weather_api_client.dart';
-import 'open_meteo_api.dart';
+import 'package:weather_bloc/api/weather_api/weather_api.dart';
 
 class OpenMeteoApiClient implements WeatherApiClient {
   OpenMeteoApiClient({http.Client? httpClient})
@@ -13,6 +12,7 @@ class OpenMeteoApiClient implements WeatherApiClient {
 
   static const _baseUrl = 'api.open-meteo.com';
 
+  @override
   Future<Weather> getWeather({
     required double latitude,
     required double longitude,
