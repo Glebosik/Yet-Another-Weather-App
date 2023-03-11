@@ -16,3 +16,6 @@ Repository Layer abstracts Data Layer letting us utilize different weather APIs 
 Business Logic Layer acts like a bridge between Repository and UI also helping with state management of app.
 
 Presentation Layers name speaks for itself.
+
+
+Application should be completely covered with unit and widget tests.
