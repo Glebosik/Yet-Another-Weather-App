@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:test/test.dart';
-import 'package:weather_bloc/weather/repository/models/models.dart';
+import 'package:weather_bloc/weather_repository/models/models.dart';
 
 void main() {
   group('Weather', () {

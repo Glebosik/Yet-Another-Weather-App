@@ -5,8 +5,8 @@ import 'package:weather_bloc/api/weather_api/weather_api.dart' as weather_api;
 import 'package:weather_bloc/api/geocoding_api/geocoding_api.dart'
     as geocoding_api;
 import 'package:test/test.dart';
-import 'package:weather_bloc/weather/repository/models/models.dart';
-import 'package:weather_bloc/weather/repository/weather_repository.dart';
+import 'package:weather_bloc/weather_repository/models/models.dart';
+import 'package:weather_bloc/weather_repository/weather_repository.dart';
 
 class MockOpenMeteoApiClient extends Mock
     implements weather_api.OpenMeteoApiClient {}
