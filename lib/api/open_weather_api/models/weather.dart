@@ -11,5 +11,5 @@ class Weather {
 
   final double temperature;
   @JsonKey(name: 'weathercode')
-  final double weatherCode;
+  final int weatherCode;
 }

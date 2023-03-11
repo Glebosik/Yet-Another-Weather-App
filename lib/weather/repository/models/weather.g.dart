@@ -28,9 +28,9 @@ Map<String, dynamic> _$WeatherToJson(Weather instance) => <String, dynamic>{
     };
 
 const _$WeatherConditionEnumMap = {
-  WeatherCondition.clear: 'clear',
-  WeatherCondition.rainy: 'rainy',
-  WeatherCondition.cloudy: 'cloudy',
-  WeatherCondition.snowy: 'snowy',
-  WeatherCondition.unknown: 'unknown',
+  WeatherCondition.clear: 1,
+  WeatherCondition.rainy: 2,
+  WeatherCondition.cloudy: 3,
+  WeatherCondition.snowy: 4,
+  WeatherCondition.unknown: 5,
 };

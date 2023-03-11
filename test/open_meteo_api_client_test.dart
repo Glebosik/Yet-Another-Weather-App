@@ -98,7 +98,7 @@ void main() {
 "temperature": 15.3,
 "windspeed": 25.8,
 "winddirection": 310,
-"weathercode": 63,
+"weathercode": 0,
 "time": "2022-09-12T01:00"
 }
 }
@@ -113,7 +113,7 @@ void main() {
           actual,
           isA<Weather>()
               .having((w) => w.temperature, 'temperature', 15.3)
-              .having((w) => w.weatherCode, 'weatherCode', 63.0),
+              .having((w) => w.weatherCode, 'weatherCode', 1),
         );
       });
     });

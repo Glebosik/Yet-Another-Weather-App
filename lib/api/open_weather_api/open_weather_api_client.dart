@@ -39,8 +39,43 @@ class OpenWeatherApiClient implements WeatherApiClient {
 
     var jsonForInstantiation = <String, dynamic>{};
 
-    final weathercode = bodyJson['weather'][0]['id'] as int;
-    jsonForInstantiation['weathercode'] = weathercode.toDouble();
+    final jsonWeatherCode = bodyJson['weather'][0]['id'] as int;
+    late final int weatherCode;
+    //https://www.weatherbit.io/api/codes
+    switch (jsonWeatherCode) {
+      case 800:
+        weatherCode = 1; //Clear
+        break;
+      case 500:
+      case 501:
+      case 502:
+      case 511:
+      case 520:
+      case 521:
+      case 522:
+        weatherCode = 2; //Rain
+        break;
+      case 801:
+      case 802:
+      case 803:
+      case 804:
+        weatherCode = 3; //Cloudy
+        break;
+      case 600:
+      case 601:
+      case 602:
+      case 610:
+      case 611:
+      case 612:
+      case 621:
+      case 622:
+      case 623:
+        weatherCode = 4; //Snowy
+        break;
+      default:
+        weatherCode = 5; //Unknown
+    }
+    jsonForInstantiation['weathercode'] = weatherCode;
 
     final temperature = bodyJson['main']['temp'] as double;
     jsonForInstantiation['temperature'] = temperature;

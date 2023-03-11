@@ -35,8 +35,40 @@ class OpenMeteoApiClient implements WeatherApiClient {
       throw WeatherNotFoundFailure();
     }
 
-    final weatherJson = bodyJson['current_weather'] as Map<String, dynamic>;
+    var jsonForInstantiation = <String, dynamic>{};
 
-    return Weather.fromJson(weatherJson);
+    final jsonWeatherCode = bodyJson['current_weather']['weathercode'] as int;
+    late final int weatherCode;
+    //https://open-meteo.com/en/docs
+    switch (jsonWeatherCode) {
+      case 0:
+        weatherCode = 1; //Clear
+        break;
+      case 61:
+      case 63:
+      case 65:
+      case 66:
+      case 67:
+        weatherCode = 2; //Rain
+        break;
+      case 1:
+      case 2:
+      case 3:
+        weatherCode = 3; //Cloudy
+        break;
+      case 71:
+      case 73:
+      case 75:
+        weatherCode = 4; //Snowy
+        break;
+      default:
+        weatherCode = 5; //Unknown
+    }
+    jsonForInstantiation['weathercode'] = weatherCode;
+
+    final temperature = bodyJson['current_weather']['temperature'] as double;
+    jsonForInstantiation['temperature'] = temperature;
+
+    return Weather.fromJson(jsonForInstantiation);
   }
 }

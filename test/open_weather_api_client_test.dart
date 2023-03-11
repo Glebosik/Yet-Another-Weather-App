@@ -92,10 +92,11 @@ void main() {
 "coord":
 {
   "lon":12,
-  "lat":12},
+  "lat":12
+},
 "weather":
 [{
-  "id":804,
+  "id":800,
   "main":"Clouds",
   "description":"overcast clouds",
   "icon":"04d"
@@ -146,7 +147,7 @@ void main() {
           actual,
           isA<Weather>()
               .having((w) => w.temperature, 'temperature', 38.24)
-              .having((w) => w.weatherCode, 'weatherCode', 804.0),
+              .having((w) => w.weatherCode, 'weatherCode', 1),
         );
       });
     });

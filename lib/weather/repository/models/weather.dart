@@ -4,10 +4,15 @@ import 'package:json_annotation/json_annotation.dart';
 part 'weather.g.dart';
 
 enum WeatherCondition {
+  @JsonValue(1)
   clear,
+  @JsonValue(2)
   rainy,
+  @JsonValue(3)
   cloudy,
+  @JsonValue(4)
   snowy,
+  @JsonValue(5)
   unknown,
 }
 
